@@ -27,14 +27,14 @@ public class CardDeliveryTest {
         $("[data-test-id='city'] input").setValue("Москва");
         String currentDate = generateDate (4, "dd.MM.yyyy");
         $("[data-test-id='date'] input").sendKeys(Keys.chord(Keys.SHIFT, Keys.HOME), Keys.DELETE);
-        $("[date-test-id='date'] input").sendKeys(currentDate);
+        $("[data-test-id='date'] input").sendKeys(currentDate);
         $("[data-test-id='name'] input").setValue("Иван Петрович Петров");
-        $("[date-test-id='phone'] input").setValue("+73336669922");
+        $("[data-test-id='phone'] input").setValue("+73336669922");
         $("[data-test-id='agreement']").click();
         $("button.button").click();
         $(".notification__content")
                 .shouldBe(Condition.visible, Duration.ofSeconds(15))
-                .shouldHave(Condition.exactText("Встреча успешно забронирована на" + currentDate));
+                .shouldHave(Condition.exactText("Встреча успешно забронирована на " + currentDate));
 
 
 
